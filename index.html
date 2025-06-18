@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Safe and Supportive Environment</title>
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+    }
+    .container {
+      width: 622px;
+      height: 600px;
+      background-color: #F2F2F2;
+      padding: 10px;
+      position: relative;
+    }
+    .content-section {
+      display: none;
+      background-color: #ffffff;
+      border-left: 6px solid #532A8C;
+      padding: 15px;
+      margin-top: 10px;
+    }
+    .content-section h3 {
+      color: #532A8C;
+      margin-top: 0;
+    }
+  </style>
+  <script>
+    function showSection(id) {
+      var sections = document.querySelectorAll('.content-section');
+      sections.forEach(function(section) {
+        section.style.display = 'none';
+      });
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <img src="PCBU image.jpg" usemap="#safetyMap" alt="Safety Diagram" width="600" height="400">
+
+    <map name="safetyMap">
+      <area shape="circle" coords="300,200,60" alt="Safe Environment" href="javascript:void(0);" onclick="showSection('safe')">
+      <area shape="circle" coords="300,80,50" alt="Identifying Risks" href="javascript:void(0);" onclick="showSection('identify')">
+      <area shape="circle" coords="420,160,50" alt="Mitigating Risks" href="javascript:void(0);" onclick="showSection('mitigate')">
+      <area shape="circle" coords="420,280,50" alt="Policies" href="javascript:void(0);" onclick="showSection('policies')">
+      <area shape="circle" coords="180,280,50" alt="Compliance" href="javascript:void(0);" onclick="showSection('compliance')">
+      <area shape="circle" coords="180,160,50" alt="Worker Consultation" href="javascript:void(0);" onclick="showSection('consult')">
+    </map>
+
+    <div id="safe" class="content-section">
+      <h3>Building a Safe & Supportive Workplace</h3>
+      <p>We're committed to fostering a workplace where everyone feels secure, respected, and empowered. This holistic approach covers physical safety, psychological well-being, and shared responsibility. Explore how we identify, mitigate, and manage risks, ensure compliance, set policies, and engage workers to create an exceptional environment.</p>
+    </div>
+
+    <div id="identify" class="content-section">
+      <h3>Proactive Risk Identification</h3>
+      <p>We systematically identify potential hazards through inspections, incident reports, and feedback. By analysing tasks, equipment, environments, and psychosocial factors, we pinpoint risks. This proactive approach allows us to implement controls before incidents, ensuring a healthier workplace. Please report any observed risks.</p>
+    </div>
+
+    <div id="mitigate" class="content-section">
+      <h3>Effective Risk Mitigation Strategies</h3>
+      <p>Once risks are identified, we apply a hierarchy of controls (elimination, substitution, engineering, administrative, PPE) to reduce harm. This includes redesigning workstations, implementing safety barriers, and clear safe work procedures. We continuously review and adapt these controls to maintain high safety standards.</p>
+    </div>
+
+    <div id="policies" class="content-section">
+      <h3>Our Workplace Safety & Support Policies</h3>
+      <p>Our comprehensive policies form the backbone of our safe environment commitment. They clearly articulate responsibilities and procedures for health, safety, and well-being. From WHS to specific guidelines on bullying or emergencies, these policies set clear expectations and are regularly reviewed to meet current legislation and best practices.</p>
+    </div>
+
+    <div id="compliance" class="content-section">
+      <h3>Ensuring Compliance with Safety Obligations</h3>
+      <p>Compliance is crucial. We strictly adhere to WHS legislation, codes of practice, and internal policies through regular audits, record-keeping, and training. We monitor legislative changes to ensure our systems meet or exceed regulatory requirements, protecting our workers and demonstrating responsible operations.</p>
+    </div>
+
+    <div id="consult" class="content-section">
+      <h3>Empowering Voices: Worker Consultation</h3>
+      <p>A safe environment thrives on active participation. Worker consultation ensures insights and concerns are heard in all health and safety decisions. Through safety meetings, HSRs, and feedback channels, we involve workers in hazard identification and control, fostering shared safety ownership and effective, practical solutions.</p>
+    </div>
+  </div>
+</body>
+</html>
