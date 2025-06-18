@@ -1,83 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Safe and Supportive Environment</title>
-  <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
-    }
-    .container {
-      width: 622px;
-      height: 600px;
-      background-color: #F2F2F2;
-      padding: 10px;
-      position: relative;
-    }
-    .content-section {
-      display: none;
-      background-color: #ffffff;
-      border-left: 6px solid #532A8C;
-      padding: 15px;
-      margin-top: 10px;
-    }
-    .content-section h3 {
-      color: #532A8C;
-      margin-top: 0;
-    }
-  </style>
-  <script>
-    function showSection(id) {
-      var sections = document.querySelectorAll('.content-section');
-      sections.forEach(function(section) {
-        section.style.display = 'none';
-      });
-      document.getElementById(id).style.display = 'block';
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workplace Safety and Support for Dental Assistants</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General body styling to center the accordion */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; /* A soft background for the entire page */
+            color: #333; /* Default text colour */
+        }
+
+        /* Container for the entire accordion structure */
+        .accordion-container {
+            width: 622px; /* Specified width */
+            height: 600px; /* Specified height */
+            max-width: 95%; /* Ensures responsiveness on smaller screens */
+            background-color: #F2F2F2; /* Light grey brand colour for the container background */
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            overflow: hidden; /* Ensures rounded corners are respected */
+            display: flex;
+            flex-direction: column; /* Stack accordion items vertically */
+        }
+
+        /* Styling for each individual accordion item */
+        .accordion-item {
+            border-bottom: 1px solid #C3ACE8; /* Light purple brand colour for separators */
+        }
+
+        /* Remove border from the last accordion item for a cleaner look */
+        .accordion-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Styling for the clickable header of each accordion item */
+        .accordion-header {
+            background-color: #7ABF49; /* Green brand colour for header */
+            color: white; /* White text for contrast */
+            padding: 18px 25px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 1.1em; /* Slightly adjusted for plain English tone */
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+            display: flex;
+            justify-content: space-between; /* Pushes text and icon apart */
+            align-items: center;
+            box-sizing: border-box; /* Include padding in the element's total width */
+            font-weight: bold;
+        }
+
+        /* Hover effect for the accordion header */
+        .accordion-header:hover {
+            background-color: #96BF78; /* Lighter green brand colour on hover */
+        }
+
+        /* Styling for the header when the accordion content is active/open */
+        .accordion-header.active {
+            background-color: #532A8C; /* Dark purple brand colour when active */
+            color: white;
+        }
+
+        /* Styling for the plus/minus icon */
+        .accordion-header .icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease; /* Smooth rotation for the icon */
+            margin-left: 20px; /* Space between header text and icon */
+        }
+
+        /* Rotate the icon when the accordion is active */
+        .accordion-header.active .icon {
+            transform: rotate(45deg); /* Transforms '+' to an 'X' or dash */
+        }
+
+        /* Styling for the collapsible content area */
+        .accordion-content {
+            background-color: #F2F2F2; /* Very light grey brand colour for content background */
+            max-height: 0; /* Initially hidden, collapsed state */
+            overflow: hidden;
+            transition: max-height 0.4s ease-out; /* Smooth slide transition */
+            padding: 0 25px; /* Horizontal padding */
+        }
+
+        /* Paragraph styling within the content */
+        .accordion-content p {
+            padding-top: 15px; /* Spacing within content */
+            padding-bottom: 15px;
+            margin: 0;
+            line-height: 1.6;
+            color: #333; /* Dark grey for general text */
+        }
+
+        /* Styling for subheadings within the content */
+        .accordion-content h4 {
+            color: #532A8C; /* Dark purple brand colour for subheadings */
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        /* Styling for unordered lists within the content */
+        .accordion-content ul {
+            list-style-type: disc; /* Standard bullet points */
+            padding-left: 40px; /* Indent list items */
+            padding-top: 15px;
+            padding-bottom: 15px;
+            margin: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Spacing for list items */
+        .accordion-content ul li {
+            margin-bottom: 8px;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <img src="PCBU image.jpg" usemap="#safetyMap" alt="Safety Diagram" width="600" height="400">
 
-    <map name="safetyMap">
-      <area shape="circle" coords="300,200,60" alt="Safe Environment" href="javascript:void(0);" onclick="showSection('safe')">
-      <area shape="circle" coords="300,80,50" alt="Identifying Risks" href="javascript:void(0);" onclick="showSection('identify')">
-      <area shape="circle" coords="420,160,50" alt="Mitigating Risks" href="javascript:void(0);" onclick="showSection('mitigate')">
-      <area shape="circle" coords="420,280,50" alt="Policies" href="javascript:void(0);" onclick="showSection('policies')">
-      <area shape="circle" coords="180,280,50" alt="Compliance" href="javascript:void(0);" onclick="showSection('compliance')">
-      <area shape="circle" coords="180,160,50" alt="Worker Consultation" href="javascript:void(0);" onclick="showSection('consult')">
-    </map>
+    <div class="accordion-container">
 
-    <div id="safe" class="content-section">
-      <h3>Building a Safe & Supportive Workplace</h3>
-      <p>We're committed to fostering a workplace where everyone feels secure, respected, and empowered. This holistic approach covers physical safety, psychological well-being, and shared responsibility. Explore how we identify, mitigate, and manage risks, ensure compliance, set policies, and engage workers to create an exceptional environment.</p>
+        <!-- Accordion Item 1: Safe and Supportive Environment -->
+        <div class="accordion-item">
+            <button class="accordion-header">
+                Safe and Supportive Environment
+                <span class="icon">+</span>
+            </button>
+            <div class="accordion-content">
+                <p>We are committed to fostering a workplace where everyone feels secure, respected, and empowered. This holistic approach covers physical safety, psychological well-being, and shared responsibility. Explore how we identify, mitigate, and manage risks, ensure compliance, set policies, and engage workers to create an exceptional environment.</p>
+            </div>
+        </div>
+
+        <!-- Accordion Item 2: Identifying Risks -->
+        <div class="accordion-item">
+            <button class="accordion-header">
+                Identifying Risks
+                <span class="icon">+</span>
+            </button>
+            <div class="accordion-content">
+                <p>We systematically identify potential hazards through inspections, incident reports, and feedback. By analysing tasks, equipment, environments, and psychosocial factors, we pinpoint risks. This proactive approach allows us to implement controls before incidents, ensuring a healthier workplace. Please report any observed risks.</p>
+            </div>
+        </div>
+
+        <!-- Accordion Item 3: Mitigating Risks -->
+        <div class="accordion-item">
+            <button class="accordion-header">
+                Mitigating Risks
+                <span class="icon">+</span>
+            </button>
+            <div class="accordion-content">
+                <p>Once risks are identified, we apply a hierarchy of controls (elimination, substitution, engineering, administrative, PPE) to reduce harm. This includes redesigning workstations, implementing safety barriers, and clear safe work procedures. We continuously review and adapt these controls to maintain high safety standards.</p>
+            </div>
+        </div>
+
+        <!-- Accordion Item 4: Policies -->
+        <div class="accordion-item">
+            <button class="accordion-header">
+                Policies
+                <span class="icon">+</span>
+            </button>
+            <div class="accordion-content">
+                <p>Our comprehensive policies form the backbone of our safe environment commitment. They clearly articulate responsibilities and procedures for health, safety, and well-being. From WHS to specific guidelines on bullying or emergencies, these policies set clear expectations and are regularly reviewed to meet current legislation and best practices.</p>
+            </div>
+        </div>
+
+        <!-- Accordion Item 5: Compliance -->
+        <div class="accordion-item">
+            <button class="accordion-header">
+                Compliance
+                <span class="icon">+</span>
+            </button>
+            <div class="accordion-content">
+                <p>Compliance is crucial. We strictly adhere to WHS legislation, codes of practice, and internal policies through regular audits, record-keeping, and training. We monitor legislative changes to ensure our systems meet or exceed regulatory requirements, protecting our workers and demonstrating responsible operations.</p>
+            </div>
+        </div>
+
+        <!-- Accordion Item 6: Worker Consultation -->
+        <div class="accordion-item">
+            <button class="accordion-header">
+                Worker Consultation
+                <span class="icon">+</span>
+            </button>
+            <div class="accordion-content">
+                <p>A safe environment thrives on active participation. Worker consultation ensures insights and concerns are heard in all health and safety decisions. Through safety meetings, Health and Safety Representatives (HSRs), and feedback channels, we involve workers in hazard identification and control, fostering shared safety ownership and effective, practical solutions.</p>
+            </div>
+        </div>
+
     </div>
 
-    <div id="identify" class="content-section">
-      <h3>Proactive Risk Identification</h3>
-      <p>We systematically identify potential hazards through inspections, incident reports, and feedback. By analysing tasks, equipment, environments, and psychosocial factors, we pinpoint risks. This proactive approach allows us to implement controls before incidents, ensuring a healthier workplace. Please report any observed risks.</p>
-    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select all elements with the class 'accordion-header'
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
 
-    <div id="mitigate" class="content-section">
-      <h3>Effective Risk Mitigation Strategies</h3>
-      <p>Once risks are identified, we apply a hierarchy of controls (elimination, substitution, engineering, administrative, PPE) to reduce harm. This includes redesigning workstations, implementing safety barriers, and clear safe work procedures. We continuously review and adapt these controls to maintain high safety standards.</p>
-    </div>
+            // Iterate over each header to attach an event listener
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    // Toggle the 'active' class on the clicked header.
+                    // This class changes its background colour and rotates the icon.
+                    header.classList.toggle('active');
 
-    <div id="policies" class="content-section">
-      <h3>Our Workplace Safety & Support Policies</h3>
-      <p>Our comprehensive policies form the backbone of our safe environment commitment. They clearly articulate responsibilities and procedures for health, safety, and well-being. From WHS to specific guidelines on bullying or emergencies, these policies set clear expectations and are regularly reviewed to meet current legislation and best practices.</p>
-    </div>
+                    // Get the very next sibling element to the header, which is the content panel.
+                    const content = header.nextElementSibling;
 
-    <div id="compliance" class="content-section">
-      <h3>Ensuring Compliance with Safety Obligations</h3>
-      <p>Compliance is crucial. We strictly adhere to WHS legislation, codes of practice, and internal policies through regular audits, record-keeping, and training. We monitor legislative changes to ensure our systems meet or exceed regulatory requirements, protecting our workers and demonstrating responsible operations.</p>
-    </div>
+                    // Check if the content currently has a maxHeight value applied (meaning it's open)
+                    if (content.style.maxHeight) {
+                        // If it's open, set maxHeight to null to collapse it smoothly.
+                        content.style.maxHeight = null;
+                    } else {
+                        // If it's closed, first collapse all other open accordion items
+                        accordionHeaders.forEach(otherHeader => {
+                            // Ensure we don't collapse the currently clicked header
+                            // and only collapse headers that are currently active (open)
+                            if (otherHeader !== header && otherHeader.classList.contains('active')) {
+                                otherHeader.classList.remove('active'); // Remove active class
+                                otherHeader.nextElementSibling.style.maxHeight = null; // Collapse its content
+                            }
+                        });
 
-    <div id="consult" class="content-section">
-      <h3>Empowering Voices: Worker Consultation</h3>
-      <p>A safe environment thrives on active participation. Worker consultation ensures insights and concerns are heard in all health and safety decisions. Through safety meetings, HSRs, and feedback channels, we involve workers in hazard identification and control, fostering shared safety ownership and effective, practical solutions.</p>
-    </div>
-  </div>
+                        // Now, open the clicked accordion item.
+                        // Set maxHeight to its scrollHeight, which is the actual height of its content.
+                        // This allows for a smooth 'slide down' animation.
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
